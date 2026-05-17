@@ -35,9 +35,22 @@ const SignIn = ({ onLogin }) => {
   };
 
   return (
-    <div className="container" style={{ maxWidth: '400px', marginTop: '100px' }}>
-      <div className="card" style={{ padding: '40px' }}>
-        <h2 style={{ marginBottom: '24px', textAlign: 'center' }}>Sign In</h2>
+    <div style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+      {/* Large background sandwich */}
+      <div style={{ 
+        position: 'absolute', 
+        fontSize: '400px', 
+        opacity: 0.1, 
+        transform: 'rotate(-15deg)', 
+        zIndex: -1,
+        pointerEvents: 'none'
+      }}>
+        🥪
+      </div>
+      
+      <div className="container" style={{ maxWidth: '400px', width: '100%', zIndex: 1 }}>
+        <div className="card" style={{ padding: '40px', backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+          <h2 style={{ marginBottom: '24px', textAlign: 'center' }}>Sign In</h2>
         {error && <div className="error-message" style={{ marginBottom: '16px', textAlign: 'center' }}>{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="input-group">
